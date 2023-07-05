@@ -1,0 +1,43 @@
+Usuario ──(Internet)──> www.foobar.com (8.8.8.8)
+                             │
+                             ▼
+                    +-----------------+
+                    |   Servidor      |
+                    +-----------------+
+                    |  (8.8.8.8)      |
+                    +-----------------+
+                             │
+                             ▼
+                    +-----------------+
+                    |     Nginx       |
+                    +-----------------+
+                             │
+                             ▼
+                    +-----------------+
+                    |   Aplicación    |
+                    +-----------------+
+                             │
+                             ▼
+                    +-----------------+
+                    |    MySQL        |
+                    +-----------------+
+                             │
+                             ▼
+                    +-----------------+
+                    |  Archivos de    |
+                    |   la aplicación |
+                    +-----------------+
+
+
+A server is a computer or software that provides functionality or services to other devices or programs, in this case, hosting the website.
+The domain name is used to provide a readable, easy-to-remember address for the website, rather than relying on IP addresses.
+The DNS www record is an A record that specifies the IP address associated with the "www" subdomain of foobar.com.
+The web server (Nginx) handles HTTP requests, serves static files, and forwards dynamic requests to the application server.
+The application server hosts the application code and handles the logic and processing of user requests, generating dynamic content if necessary.
+The database (MySQL) stores and retrieves data required by the application, such as user information, publications or other relevant data.
+The server communicates with the user's computer using the HTTP protocol, sending the requested web pages or the corresponding responses.
+As for the problems of this infrastructure:
+
+Single point of failure (SPOF): the entire infrastructure depends on a single server. If it fails, the website becomes inaccessible.
+Downtime during maintenance: When performing maintenance tasks, such as deploying new code, the web server may need to be restarted, resulting in temporary downtime.
+Limited scalability: With a single server, it can be difficult to handle high incoming traffic effectively. Scaling becomes a challenge without additional servers or load balancing mechanisms.
