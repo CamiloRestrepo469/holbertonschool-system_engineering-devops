@@ -102,85 +102,9 @@ HTTPS (Hypertext Transfer Protocol Secure) es una versión segura del protocolo 
 Un cortafuegos (firewall) es una barrera de seguridad que controla y filtra el tráfico de red entre una red privada y una red externa, como Internet. Su objetivo principal es proteger la red y los sistemas contra amenazas y ataques no autorizados. Un cortafuegos puede configurarse para permitir o bloquear ciertos tipos de tráfico, según reglas predefinidas, y actúa como una capa de defensa adicional para prevenir accesos no autorizados y proteger la integridad y confidencialidad de los datos.
 
 
-# Networking Basics
 
-En este repositorio se presentan los conceptos básicos de redes y algunos elementos clave en el desarrollo de sistemas web. A continuación, se proporciona una explicación detallada de cada concepto:
 
-## Conceptos básicos de red
 
-Los conceptos básicos de red se refieren a los principios fundamentales de cómo funciona una red de computadoras. Esto incluye la transmisión de datos, la comunicación entre dispositivos, la configuración de direcciones IP, el enrutamiento de paquetes y los protocolos de red. Comprender estos conceptos es esencial para diseñar, implementar y mantener sistemas de red eficientes y seguros.
-
-## Concepto de servidor
-
-Un servidor es un dispositivo o software que proporciona servicios o recursos a otros dispositivos en una red. Actúa como un punto centralizado de almacenamiento o procesamiento de datos y responde a solicitudes de otros dispositivos conocidos como clientes. Los servidores pueden ofrecer una variedad de servicios, como servidores web, servidores de correo electrónico, servidores de bases de datos, servidores de archivos, etc.
-
-## Concepto de servidor web
-
-Un servidor web es un tipo específico de servidor que almacena y distribuye páginas web a través del protocolo HTTP (Hypertext Transfer Protocol). Procesa las solicitudes de los clientes web y les envía las páginas web solicitadas, que se muestran en los navegadores de los usuarios. Los servidores web pueden ejecutar aplicaciones web dinámicas y ofrecer contenido estático o dinámico a través de diferentes tecnologías, como LAMP (Linux, Apache, MySQL, PHP) o MEAN (MongoDB, Express, Angular, Node.js).
-
-## Concepto de DNS
-
-DNS (Domain Name System) es un sistema de nomenclatura jerárquica utilizado para asignar nombres a dispositivos conectados a una red IP. Traduce los nombres de dominio legibles por humanos, como "example.com", en direcciones IP numéricas que las máquinas pueden entender y utilizar para la comunicación. El DNS permite a los usuarios acceder a sitios web y otros servicios en línea utilizando nombres de dominio en lugar de tener que recordar direcciones IP complicadas.
-
-## Concepto de equilibrador de carga
-
-Un equilibrador de carga (load balancer) es un dispositivo o software que distribuye el tráfico de red de manera uniforme y eficiente entre varios servidores o recursos de computación. Su objetivo es mejorar el rendimiento, la escalabilidad y la disponibilidad de las aplicaciones al evitar la sobrecarga de un solo servidor y distribuir la carga de trabajo entre varios servidores. Esto asegura que ninguna máquina se vea abrumada y mejora la tolerancia a fallos del sistema.
-
-## Concepto de monitorización
-
-La monitorización se refiere al proceso de supervisar y controlar el rendimiento, la disponibilidad y el estado de los sistemas informáticos. Implica el seguimiento de métricas y parámetros clave, como el uso de recursos, la respuesta del sistema, los tiempos de actividad, los errores y las alertas, con el fin de identificar problemas, tomar medidas correctivas y garantizar un funcionamiento óptimo del sistema.
-
-## ¿Qué es una base de datos?
-
-Una base de datos es un sistema de almacenamiento organizado y estructurado que permite almacenar, gestionar y recuperar datos de manera eficiente. Proporciona un entorno para crear, modificar y consultar datos de manera segura y escal
-
-able. Las bases de datos se utilizan para almacenar información en diversos contextos, como sitios web, aplicaciones empresariales, sistemas de gestión de inventario, etc. Ejemplos populares de sistemas de gestión de bases de datos son MySQL, PostgreSQL, Oracle y MongoDB.
-
-## ¿Cuál es la diferencia entre un servidor web y un servidor de aplicaciones?
-
-Un servidor web se centra en el procesamiento y la entrega de páginas web estáticas o dinámicas a través del protocolo HTTP. Se encarga de la gestión de solicitudes y respuestas web, y puede ejecutar aplicaciones web basadas en tecnologías como PHP, Python o Node.js.
-
-Un servidor de aplicaciones, por otro lado, proporciona un entorno más completo para ejecutar aplicaciones empresariales complejas. Además de las funcionalidades de un servidor web, un servidor de aplicaciones puede gestionar tareas como la lógica empresarial, la gestión de transacciones, la seguridad y la integración con otros sistemas. Algunos ejemplos de servidores de aplicaciones son Apache Tomcat, JBoss y Microsoft IIS.
-
-## Tipos de registros DNS
-
-Los registros DNS son elementos de datos almacenados en una base de datos DNS que proporcionan información sobre un dominio específico. Algunos tipos comunes de registros DNS son:
-
-- A: Asocia un nombre de dominio con una dirección IP IPv4.
-- AAAA: Asocia un nombre de dominio con una dirección IP IPv6.
-- CNAME: Establece un alias o nombre alternativo para otro registro de DNS.
-- MX: Especifica los servidores de correo que procesan los correos electrónicos enviados a un dominio.
-- TXT: Permite almacenar texto arbitrario relacionado con un dominio, como registros SPF o claves de autenticación.
-
-Existen muchos otros tipos de registros DNS, cada uno con su función específica.
-
-## Punto único de fallo
-
-Un punto único de fallo (SPOF, Single Point of Failure) es un componente o punto en un sistema que, si falla, provocará la interrupción o la pérdida total del sistema. Esto significa que si el SPOF deja de funcionar, el sistema completo se vuelve inaccesible o deja de funcionar correctamente. Es importante diseñar arquitecturas y sistemas con redundancia y mecanismos de respaldo para evitar SPOFs y garantizar una alta disponibilidad y fiabilidad.
-
-## Cómo evitar el tiempo de inactividad al desplegar código nuevo
-
-Para evitar el tiempo de inactividad al desplegar código nuevo, es importante utilizar prácticas de implementación continua (CI, Continuous Integration) y entrega continua (CD, Continuous Deployment). Estas prácticas implican automatizar el proceso de construcción, pruebas y despliegue de aplicaciones, lo que permite una entrega rápida y segura de nuevas versiones sin interrumpir el servicio. Otros enfoques incluyen el uso de entornos de producción paralelos, la implementación gradual (canary deployments) y las pruebas rigurosas antes del despliegue.
-
-## Clúster de alta disponibilidad (activo-activo/activo-pasivo)
-
-Un clúster de alta disponibilidad es una configuración de servidores en la que múltiples nodos o instancias están disponibles para proporcionar un servicio sin interrupciones en caso de fallo de uno o varios nodos. Hay dos enfoques comunes en los clústeres de alta disponibilidad
-
-:
-
-- Activo-activo: Todos los nodos del clúster están activos y comparten la carga de trabajo en condiciones normales. Si un nodo falla, los otros nodos siguen proporcionando el servicio sin interrupciones.
-
-- Activo-pasivo: Un nodo principal (activo) maneja el tráfico y la carga de trabajo habitual, mientras que uno o más nodos secundarios (pasivos) están en espera en caso de fallo del nodo principal. Si el nodo principal falla, uno de los nodos secundarios toma el control y continúa proporcionando el servicio.
-
-Estas configuraciones aseguran que el servicio esté disponible incluso si uno de los nodos del clúster falla.
-
-## Qué es HTTPS
-
-HTTPS (HTTP Secure) es un protocolo de comunicación utilizado para garantizar la seguridad y la integridad de los datos transmitidos en una red, como Internet. Utiliza una capa adicional de seguridad llamada SSL/TLS (Secure Sockets Layer/Transport Layer Security) para cifrar los datos entre el cliente y el servidor. HTTPS se utiliza comúnmente en aplicaciones web que requieren protección de datos confidenciales, como información personal, contraseñas y transacciones financieras.
-
-## Qué es un cortafuegos
-
-Un cortafuegos (firewall) es una barrera de seguridad que controla el tráfico de red entre redes con diferentes niveles de confianza. Puede ser un dispositivo físico o un software que actúa como punto de control para el tráfico entrante y saliente. El cortafuegos aplica reglas y políticas de seguridad para permitir o bloquear ciertos tipos de tráfico según criterios predefinidos. Su objetivo principal es proteger los sistemas y los datos de posibles amenazas externas, como ataques maliciosos o intrusiones no autorizadas.
 
 ## Diagrama de la pila web
 

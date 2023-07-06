@@ -1,0 +1,53 @@
+Diagram:
+
+```
+                        +-----------+
+                        |   User    |
+                        +-----+-----+
+                              |
+                              |
+                              |
+                              v
+                      +-------+-------+
+                      |   Load Balancer  |
+                      |   (HAProxy)     |
+                      +-------+-------+
+                              |
+                              |
+                +------------+-------------+
+                |                          |
+                v                          v
+       +--------+--------+        +--------+--------+
+       |   Web Server    |        | Application Server |
+       |                 |        |                     |
+       +--------+--------+        +--------+--------+
+                |                          |
+                |                          |
+                v                          v
+         +------+------+            +------+------+
+         | Database     |            | Database     |
+         |              |            |              |
+         +--------------+            +--------------+
+```
+
+Explanation:
+
+In this infrastructure, the components are split into their own servers to achieve better separation and scalability:
+
+1. User: Represents the user or client accessing the application.
+
+2. Load Balancer (HAProxy): Acts as the entry point for incoming user requests and distributes the traffic across the web servers and application servers. The load balancer enhances performance, scalability, and fault tolerance by evenly distributing the workload.
+
+3. Web Server: Handles the serving of static files and HTTP requests from the users. It can handle tasks like SSL termination, caching, and load balancing. The web server's primary responsibility is to deliver web content to the users.
+
+4. Application Server: Executes the application logic and processes dynamic requests from the users. It handles tasks such as authentication, business logic, and database operations. The application server interacts with the web server and the database server to generate dynamic content.
+
+5. Database: Stores and manages the application's data. It is accessed by the application server to retrieve and store data. In this diagram, there are two database servers, providing redundancy and fault tolerance.
+
+Specifics of the infrastructure:
+
+- Addition of Load Balancer: The load balancer is added to evenly distribute incoming user requests across multiple web servers and application servers. This helps improve performance, scalability, and availability.
+
+- Splitting Components: The separation of components into their own servers allows for better scalability and isolation. The web server can focus on serving static content efficiently, while the application server can handle dynamic requests and business logic independently. The database servers can handle data storage and retrieval, providing fault tolerance and improved performance.
+
+By splitting the components and using a load balancer, this infrastructure achieves better scalability, fault tolerance, and separation of concerns.
