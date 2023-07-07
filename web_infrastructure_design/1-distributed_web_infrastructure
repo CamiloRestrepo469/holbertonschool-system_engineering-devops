@@ -1,3 +1,7 @@
+img
+
+https://imgur.com/F4ucZ3D
+
 Diagram:
 
 ```
@@ -35,9 +39,7 @@ Diagram:
       +--------------+            +--------------+
 ```
 
-Explanation:
 
-This distributed web infrastructure consists of the following components:
 
 1. User: Represents the user or client who accesses the web application.
 
